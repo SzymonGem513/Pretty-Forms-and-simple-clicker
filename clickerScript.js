@@ -25,22 +25,22 @@ window.addEventListener('load', () => {
         generatedNumber.innerHTML = bigNumber;
     })
 
-    resetClicker.addEventListener("click", () => {
-        bigNumber = 0;
-        generatedNumber.innerHTML = bigNumber;
+    // resetClicker.addEventListener("click", () => {
+    //     bigNumber = 0;
+    //     generatedNumber.innerHTML = bigNumber;
 
-    })
+    // })
 
 
-    const upgradeButton = document.querySelector(".upgrade-button")
+    // const upgradeButton = document.querySelector(".upgrade-button")
 
-    upgradeButton.addEventListener("click", () => {
-        if(bigNumber >= 20){
-            increment++;
-            bigNumber -= 20;
-            generatedNumber.innerHTML = bigNumber;
-        }
+    // upgradeButton.addEventListener("click", () => {
+    //     if(bigNumber >= 20){
+    //         increment++;
+    //         bigNumber -= 20;
+    //         generatedNumber.innerHTML = bigNumber;
+    //     }
 
-    })
+    // })
 
 });

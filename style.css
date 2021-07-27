@@ -202,9 +202,20 @@ body{
     background-color: rgb(53, 53, 53);
 }
 
-span.generated-number{
-    color:var(--mainColor);
+.generated-number{
+    color: var(--mainColor);
     font-size: 85px;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+.change-color-theme{
+    position:fixed;
+    bottom:0;
+    left:0;
+    cursor:pointer;
+    width:10px;
+    height:10px;
+    background-color: var(--mainColor);
+    border:none;
 }

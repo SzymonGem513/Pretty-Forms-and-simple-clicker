@@ -1,13 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // document.addEventListener('click',()=>{
-    //   document.documentElement.style.setProperty('--mainColor', '#ff0000');
-    //   document.documentElement.style.setProperty('--darkerBg', '#fff');
-    // })
+  const changeColorBtn = document.querySelector('.change-color-theme');
+  changeColorBtn.addEventListener('click', () =>{
+    changeTheme();
+  })
+
+  const colorArray = ['red', 'blueviolet', 'blue','green','yellow']
+  let i = 0;
+
+    const changeTheme = () =>{
+      if(i>=3) i=0;
+      document.documentElement.style.setProperty('--mainColor', colorArray[i]);
+      i++;
+      let first = colorArray.shift();
+      console.log(first)
+      colorArray.push(first);
+
+    }
+    
 
   const triggerInputs = () => {
     const inputsLeft = document.querySelectorAll('.input-left');
-
     inputsLeft.forEach(el => {
       el.addEventListener('focusout', () => {
         if (el.value !== '') {
@@ -20,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   triggerInputs();
+
+ 
 
     
     
