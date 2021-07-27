@@ -7,6 +7,13 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+ -khtml-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
 }
 
 body{
@@ -34,6 +41,12 @@ body{
     width:75vw;
     background-color: var(--darkerBg);
     border-bottom:1px solid var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-right{
+    position:relative;
 }
 
 
@@ -84,6 +97,7 @@ body{
     transform:translateY(-50%);
     font-size: 16px;
     padding: 0 20px;
+    color: var(--mainColor);
 }
 
 .btn-container {
@@ -124,9 +138,8 @@ body{
 }
 
 .btn-container:active::after {
-    animation: splash 1s forwards;
+    animation: splash .2s forwards;
 }
-
 
 @keyframes splash {
     0%{
@@ -136,5 +149,62 @@ body{
     100% {
         opacity:0;
         transform:scaleX(1.1) scaleY(1.5);
+    }
 }
+
+
+.clicker-button{
+    width: 30vw;
+    height: 20vh;
+    margin:0 auto;
+    margin-top: 30vh;
+    background-color: transparent;
+    border: 1px solid var(--mainColor);
+    cursor: pointer;
+    transition: .1s;
+    
+}
+.clicker-button-shadow{
+    width: 31vw;
+    height: 21vh;
+    box-shadow: 0 2px 4px 0 var(--mainColor), 0 3px 10px 0 var(--mainColor);
+}
+
+.reset-button,
+.upgrade-button{
+    position:fixed;
+    bottom:0;
+    right:0;
+    width:10vw;
+    height:5vh;
+    line-height: 5vh;
+    color:var(--mainColor);
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #222;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 10vw;
+}
+
+.reset-button:hover{
+    background-color: rgb(53, 53, 53);
+}
+
+.upgrade-button{
+    position:absolute;
+    right:0;
+    top:0;
+
+}
+.upgrade-button:hover{
+    background-color: rgb(53, 53, 53);
+}
+
+span.generated-number{
+    color:var(--mainColor);
+    font-size: 85px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
