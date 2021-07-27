@@ -9,12 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let i = 0;
 
     const changeTheme = () =>{
-      if(i>=3) i=0;
+      if(i >= colorArray.length) i=0;
       document.documentElement.style.setProperty('--mainColor', colorArray[i]);
       i++;
-      let first = colorArray.shift();
-      colorArray.push(first);
-
     }
     
 
