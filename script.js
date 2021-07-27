@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.style.setProperty('--mainColor', colorArray[i]);
       i++;
       let first = colorArray.shift();
-      console.log(first)
       colorArray.push(first);
 
     }
@@ -35,9 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   triggerInputs();
 
  
-
-    
-    
 
 
   });
