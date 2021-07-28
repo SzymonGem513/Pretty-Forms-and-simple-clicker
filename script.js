@@ -5,10 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     changeTheme();
   })
 
+  const logInBtn = document.querySelector('.send-form-button');
+  logInBtn.addEventListener('click', () =>{
+    logIn();
+  })
+
   const colorArray = ['red', 'blueviolet', '#0066ff','Lime','yellow','orange','Fuchsia','#00ccff','white']
   let i = 0;
 
-    const changeTheme = () =>{
+  const changeTheme = () =>{
       if(i >= colorArray.length) i=0;
       document.documentElement.style.setProperty('--mainColor', colorArray[i]);
       i++;
@@ -26,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
     })
+  }
+
+  const logIn = () =>{
+    alert('Blocked;');
   }
 
   triggerInputs();
