@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.style.setProperty('--mainColor', colorArray[i]);
       i++;
     }
-    
-
   const triggerInputs = () => {
     const inputsLeft = document.querySelectorAll('.input-left');
     inputsLeft.forEach(el => {
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
-
   const logIn = () =>{
     alert('Blocked;');
   }
