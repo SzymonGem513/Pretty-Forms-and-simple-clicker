@@ -60,12 +60,14 @@ body{
     height:100%;
     outline:none;
     padding: 0 10px;
+    cursor:pointer;
 }
 
 .input-left:focus-visible{
     outline:none;
     border: 1px solid var(--mainColor);
     caret-color: var(--mainColor);
+    cursor:auto;
 }
 
 .input-container{
@@ -91,6 +93,7 @@ body{
     font-size: 20px;
     padding:0;
     transition: transform .2s, padding .3s .1s, font-size .3s ;
+    cursor:pointer;
 }
 
 .input-left:focus~.input-name {
@@ -98,6 +101,7 @@ body{
     font-size: 16px;
     padding: 0 20px;
     color: var(--mainColor);
+    cursor:auto;
 }
 
 .btn-container {
@@ -214,8 +218,8 @@ body{
     bottom:0;
     left:0;
     cursor:pointer;
-    width:10px;
-    height:10px;
+    width:15px;
+    height:15px;
     background-color: var(--mainColor);
     border:none;
 }

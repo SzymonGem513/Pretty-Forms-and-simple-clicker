@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     changeTheme();
   })
 
-  const colorArray = ['red', 'blueviolet', 'blue','green','yellow']
+  const colorArray = ['red', 'blueviolet', '#0066ff','Lime','yellow','orange','Fuchsia','#00ccff','white']
   let i = 0;
 
     const changeTheme = () =>{
