@@ -30,13 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
-  const logIn = () =>{
-    alert('Blocked;');
-  }
+  const logIn = async () =>{
+    const loginURL = "http://gierka.local/login.php"
+    const login = document.getElementById('login-input').value;
+    const password = document.getElementById('password-input').value;
+    const data = {login, password};
+    console.log(data);
+   
+
+    const response = await fetch(loginURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    console.log(response.json());
+  };
 
   triggerInputs();
 
- 
 
 
   });
