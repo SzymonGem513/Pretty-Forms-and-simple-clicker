@@ -223,3 +223,120 @@ body{
     background-color: var(--mainColor);
     border:none;
 }
+.stats-menu{
+    width:100%;
+    height: 80%;
+    display: flex;
+    position:relative;
+}
+.stat-{
+    border:1px solid var(--mainColor);
+    width:90%;
+    height:100px;
+}
+
+
+
+
+
+
+.content h2{ font-size:19px;}
+
+.magic-square{
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  /*change here to square */
+    /* border-radius: 10px;  */
+  background: #111845a6;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow:  0 0px 15px var(--mainColor);
+  /* border: 1px solid #111845a6; */
+  color: white;
+  /* here for dimensions change */
+  padding: 10px;
+  /*change here to rotate */
+   transform:rotate(45deg); 
+}
+
+
+.magic-square span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  
+}
+
+.magic-square::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: var(--mainColor);
+    opacity: 0.2;
+}
+
+.magic-square span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.magic-square span:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+.magic-square span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+.magic-square span:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+.magic-square span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 3px;
+  background: var(--mainColor);
+  /* change animation speed */
+  animation: animate .7s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+  transform:scaleX(0);
+  transform-origin: left;
+  }
+  50%
+  {
+    transform:scaleX(1);
+  transform-origin: left;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+  transform-origin: right;
+    
+  }
+  
+  100%
+  {
+    transform:scaleX(0);
+  transform-origin: right;
+    
+  }
+  
+  
+} 
