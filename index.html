@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon.ico"/>
+
+
     <title>Clicker</title>
 </head>
 <body>
@@ -12,37 +15,58 @@
     <div class="container-left">
         <button class="change-color-theme"></button>
 
+        <div class="login-container">
+            <div class="input-container">
+                <label for="login-input">
+                <input id="login-input" class="input-left" type="text">
 
-        <div class="input-container">
-            <label for="login-input">
-            <input id="login-input" class="input-left" type="text">
+                <div class="input-name">Login</div>
+                </label>
+            </div>
+            <div class="input-container">
+                <label for="password-input">
+                <input  id="password-input" class="input-left" type="text">
 
-            <div class="input-name">Login</div>
-            </label>
-        </div>
-        <div class="input-container">
-            <label for="password-input">
-            <input  id="password-input" class="input-left" type="text">
-
-            <div class="input-name">Hasło</div>
-            </label>
-        </div>
+                <div class="input-name">Hasło</div>
+                </label>
+            </div>
 
 
-        <div class="btn-container">
-            <a class="send-form-button">Zaloguj się</a>
-        </div>
+            <div class="btn-container">
+                <a class="send-form-button">Zaloguj się</a>
+            </div>
+        </div>  
+
+
     </div>
 
 
     <div class="container-right">
         <div class="container-top">
-            <div class="main-header"><span class="generated-number">0</span></div>
+
+        <div class="main-header">
+                <span class="generated-number">0</span>
+        </div>
+
+        <div class="magical-currency-container">
+            <div class="magic-square">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="content"></div>
+            </div>
+        </div>
+
         </div>
 
         <!-- <div class="upgrade-button">upgrade</div>
         <div class="reset-button">reset</div> -->
-        <div class="clicker-button"></div>
+        <div class="clicker-button"> 
+        </div>
+
+
+
     </div>
 
 
@@ -56,3 +80,14 @@
     <script src="clickerScript.js"></script>
 </body>
 </html>
+
+
+   <!-- <div class="dropped-coin">
+                <div class="magic-square simple">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="content"></div>
+                </div>
+            </div> -->
