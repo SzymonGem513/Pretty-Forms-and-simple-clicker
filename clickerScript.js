@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }else{
         bigNumber = parseFloat(localStorage.getItem("bigNumber"));
         generatedNumber.innerHTML = parseFloat(bigNumber);
-       
-        console.log(bigNumber)
     }
    
 
