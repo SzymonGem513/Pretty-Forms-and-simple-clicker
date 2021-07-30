@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const magicDivSample = `
-  <div class="dropped-coin-sample drop">
+  <div class="dropped-coin-sample drop" unselectable="on">
                 <div class="magic-square simple">
                     <span></span>
                     <span></span>
