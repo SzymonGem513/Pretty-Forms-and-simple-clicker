@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const magicDivSample = `
-  <div class="dropped-coin-sample drop" unselectable="on">
+  <div class="dropped-coin-sample drop">
                 <div class="magic-square simple">
                     <span></span>
                     <span></span>
@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const randomSquareRespawn = (divsArray, magicDivSample) =>{
     let rand = Math.floor(Math.random() * divsArray.length);
     divsArray[rand].insertAdjacentHTML('afterbegin',magicDivSample);
+
+    setTimeout(function(){
+      divsArray[rand].querySelector('.dropped-coin-sample').remove();
+    }, 2000);
     
   }
  
