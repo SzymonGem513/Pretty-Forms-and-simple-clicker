@@ -243,10 +243,6 @@ body {
     border: none;
 }
 
-.magical-currency-container {
-    padding-top: 2%;
-}
-
 .stats-menu {
     width: 100%;
     height: 80%;
@@ -359,7 +355,7 @@ body {
     20% {
       transform: 
         translate3d(0, 20px, 0)
-        rotate3d(0, 0, 1, 340deg);
+        rotate3d(0, 0, 1, 240deg);
       opacity: 1;
     }
     90%{
