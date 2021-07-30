@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const magicDivSample = document.querySelector('.dropped-coin-sample');
+  const magicDivSample = `
+  <div class="dropped-coin-sample drop" style="display: block;">
+                <div class="magic-square simple">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="content"></div>
+                </div>
+            </div> 
+    `
+
   const mainButton = document.querySelector('.clicker-button');
 
   mainButton.addEventListener('click', () =>{
@@ -60,9 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const randomSquareRespawn = (divsArray, magicDivSample) =>{
     let rand = Math.floor(Math.random() * divsArray.length);
-    divsArray[rand].appendChild(magicDivSample);
-    magicDivSample.style.display="block";
-    magicDivSample.classList.add('drop');
+    divsArray[rand].insertAdjacentHTML('afterbegin',magicDivSample);
     
   }
  
