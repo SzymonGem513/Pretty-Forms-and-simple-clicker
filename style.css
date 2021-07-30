@@ -168,10 +168,8 @@ body {
 }
 
 .clicker-button {
-    width: 540px;
-    height: 200px;
-    margin: 0 auto;
-    margin-top: 30vh;
+    max-width: 540px;
+    max-height: 200px;
     background-color: transparent;
     border: 1px solid var(--mainColor);
     cursor: pointer;
@@ -183,9 +181,14 @@ body {
     grid-row-gap: 0px;
 }
 
+.button-container{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -20%);
+}
+
 .clicker-button-shadow {
-    width: 560px;
-    height: 220px;
     box-shadow: 0 2px 4px 0 var(--mainColor), 0 3px 10px 0 var(--mainColor);
 }
 
@@ -237,6 +240,7 @@ body {
     height: 15px;
     background-color: var(--mainColor);
     border: none;
+    z-index: 5;
 }
 
 .stats-menu {
@@ -379,17 +383,11 @@ body {
             grid-auto-rows: max-content;
             grid-auto-columns: max-content;
     }
-    .clicker-button-shadow {
-        max-width: 260px;
-        max-height: 120px !important;
-
-    }
     .container-left{
         display: none;
     }
     .container-top{
         width:100vw;
-
     }
     
   }
