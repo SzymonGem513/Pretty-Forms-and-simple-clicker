@@ -183,10 +183,6 @@ body {
     grid-row-gap: 0px;
 }
 
-.square {
-    background-color: red;
-}
-
 .clicker-button-shadow {
     width: 560px;
     height: 220px;
@@ -241,10 +237,6 @@ body {
     height: 15px;
     background-color: var(--mainColor);
     border: none;
-}
-
-.magical-currency-container {
-    padding-top: 2%;
 }
 
 .stats-menu {
@@ -359,7 +351,7 @@ body {
     20% {
       transform: 
         translate3d(0, 20px, 0)
-        rotate3d(0, 0, 1, 340deg);
+        rotate3d(0, 0, 1, 240deg);
       opacity: 1;
     }
     90%{
@@ -368,8 +360,36 @@ body {
     to {
       opacity: 1;
       transform: 
-        translate3d(0, -850px, 0)
+        translate3d(0, -500px, 0)
         rotate3d(0, 0, 1, 0deg);
         opacity: 0;
     }
+  }
+
+ 
+  @media only screen and (max-width: 768px) {
+    .clicker-button {
+        max-width: 220px;
+        max-height: 100px;
+        display: grid;
+            grid-template-columns: repeat(10, 20px);
+            grid-template-rows: repeat(5, 20px);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            grid-auto-rows: max-content;
+            grid-auto-columns: max-content;
+    }
+    .clicker-button-shadow {
+        max-width: 260px;
+        max-height: 120px !important;
+
+    }
+    .container-left{
+        display: none;
+    }
+    .container-top{
+        width:100vw;
+
+    }
+    
   }
