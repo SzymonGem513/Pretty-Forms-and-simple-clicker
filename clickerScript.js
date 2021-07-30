@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //MAIN
     const buttonClicker = document.querySelector(".clicker-button");
     const generatedNumber = document.querySelector(".generated-number");
-    //const resetClicker = document.querySelector(".reset-button");
+    const resetClicker = document.querySelector(".reset-button");
+    
     let increment = 1;
     let bigNumber = 0;
     
@@ -35,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         generatedNumber.innerHTML = bigNumber;
     })
 
-    /*
+    
     resetClicker.addEventListener("click", () => {
         bigNumber = 0;
         generatedNumber.innerHTML = bigNumber;
-
+        localStorage.setItem("bigNumber", bigNumber)
     })
 
-
+/*
     const upgradeButton = document.querySelector(".upgrade-button")
 
     upgradeButton.addEventListener("click", () => {
