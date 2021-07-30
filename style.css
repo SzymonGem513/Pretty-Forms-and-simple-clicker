@@ -383,11 +383,13 @@ body {
             grid-auto-rows: max-content;
             grid-auto-columns: max-content;
     }
+
     .container-left{
         display: none;
     }
     .container-top{
         width:100vw;
+
     }
     
   }
