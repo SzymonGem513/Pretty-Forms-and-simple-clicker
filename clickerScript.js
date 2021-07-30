@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //const resetClicker = document.querySelector(".reset-button");
     let increment = 1;
     let bigNumber = 0;
+    
 
     if (localStorage.getItem("bigNumber") === null) {
         localStorage.setItem("bigNumber", bigNumber)
     }else{
-        localStorage.getItem("bigNumber", bigNumber);
-        generatedNumber.innerHTML = bigNumber;
+        bigNumber = parseFloat(localStorage.getItem("bigNumber"));
+        generatedNumber.innerHTML = parseFloat(bigNumber);
     }
    
 
