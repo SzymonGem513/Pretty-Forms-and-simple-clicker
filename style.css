@@ -202,7 +202,7 @@ body {
     color: var(--mainColor);
     font-size: 24px;
     font-weight: bold;
-    background-color: #222;
+    background-color: var(--darkerBg);
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
@@ -231,7 +231,8 @@ body {
     margin: 20px
 }
 
-.change-color-theme {
+.change-color-theme,
+.animation-color-theme {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -243,6 +244,12 @@ body {
     z-index: 5;
 }
 
+.animation-color-theme{
+    bottom: 0;
+    left: 20px;
+    background-color: transparent;
+    border: 1px solid var(--mainColor);
+}
 .stats-menu {
     width: 100%;
     height: 80%;
@@ -393,3 +400,18 @@ body {
     }
     
   }
+
+
+@keyframes rainbow{
+    0%{border-color: var(--mainColor,red);}
+    14.285714285714285714285714285714%{border-color:var(--mainColor,orange);}
+    28.571428571428571428571428571428%{border-color:var(--mainColor,yellow);}
+    42.857142857142857142857142857142%{border-color:var(--mainColor,green);}
+    57.142857142857142857142857142856%{border-color:var(--mainColor,blue);}
+    71.42857142857142857142857142857%{border-color:var(--mainColor,indigo);}
+    100%{border-color:var(--mainColor,purple);}
+}
+
+.rainbow-aniamtion{
+   animation:rainbow 3s;        
+}    

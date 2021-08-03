@@ -22,12 +22,52 @@ document.addEventListener("DOMContentLoaded", () => {
   changeColorBtn.addEventListener('click', () =>{
     changeTheme();
   })
-
+  
   const logInBtn = document.querySelector('.send-form-button');
   logInBtn.addEventListener('click', () =>{
   //  logIn();
   })
 
+
+  
+  let animationFlag = 0;
+  let r=255,g=0,b=0;
+  let rainbowInterval = 0;
+  const animateColorBtn = document.querySelector('.animation-color-theme');
+  animateColorBtn.addEventListener('click', () =>
+  {
+
+    if(animationFlag === 1){
+      rainbowStop(rainbowInterval);
+      r=255;
+      g=0;
+      b=0;
+      animationFlag = 0;        
+    }else if(animationFlag === 0){
+      rainbowInterval = setInterval(rainbowEngine,8);
+      animationFlag = 1;
+    }
+  })
+
+  const rainbowEngine = () =>{
+      if(r > 0 && b == 0){
+        r--;
+        g++;
+      }
+      if(g > 0 && r == 0){
+        g--;
+        b++;
+      }
+      if(b > 0 && g == 0){
+        r++;
+        b--;
+      }
+      document.documentElement.style.setProperty('--mainColor', "rgb("+r+","+g+","+b+")");
+  }
+
+  const rainbowStop = (rainbowInterval) =>{
+    clearInterval(rainbowInterval);
+  }
 
 
   const colorArray = ['red', 'blueviolet', '#0066ff','Lime','yellow','orange','Fuchsia','#00ccff','white']
@@ -64,8 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const collectGridAndCreateRandomSquare = () =>{
 
     const divNode = document.querySelectorAll('.one-piece-square');
-    let divArray = Array.from(divNode);
-    return divArray
+    return  Array.from(divNode)
    }
    
   
@@ -99,8 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   triggerInputs();
   drawGrid();
-
-
 
 
   });
