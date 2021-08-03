@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changeColorBtn = document.querySelector('.change-color-theme');
   changeColorBtn.addEventListener('click', () =>{
+    rainbowStop(rainbowInterval);
     changeTheme();
+   
   })
   
   const logInBtn = document.querySelector('.send-form-button');
@@ -38,11 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   {
 
     if(animationFlag === 1){
-      rainbowStop(rainbowInterval);
-      r=255;
-      g=0;
-      b=0;
-      animationFlag = 0;        
+      rainbowStop();
+           
     }else if(animationFlag === 0){
       rainbowInterval = setInterval(rainbowEngine,8);
       animationFlag = 1;
@@ -65,8 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.style.setProperty('--mainColor', "rgb("+r+","+g+","+b+")");
   }
 
-  const rainbowStop = (rainbowInterval) =>{
+  const rainbowStop = () =>{
     clearInterval(rainbowInterval);
+    r=255;
+    g=0;
+    b=0;
+    animationFlag = 0;   
   }
 
 
