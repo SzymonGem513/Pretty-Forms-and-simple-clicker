@@ -20,14 +20,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const changeColorBtn = document.querySelector('.change-color-theme');
   changeColorBtn.addEventListener('click', () =>{
+    rainbowStop(rainbowInterval);
     changeTheme();
+   
   })
-
+  
   const logInBtn = document.querySelector('.send-form-button');
   logInBtn.addEventListener('click', () =>{
   //  logIn();
   })
 
+
+  
+  let animationFlag = 0;
+  let r=255,g=0,b=0;
+  let rainbowInterval = 0;
+  const animateColorBtn = document.querySelector('.animation-color-theme');
+  animateColorBtn.addEventListener('click', () =>
+  {
+
+    if(animationFlag === 1){
+      rainbowStop();
+           
+    }else if(animationFlag === 0){
+      rainbowInterval = setInterval(rainbowEngine,8);
+      animationFlag = 1;
+    }
+  })
+
+  const rainbowEngine = () =>{
+      if(r > 0 && b == 0){
+        r--;
+        g++;
+      }
+      if(g > 0 && r == 0){
+        g--;
+        b++;
+      }
+      if(b > 0 && g == 0){
+        r++;
+        b--;
+      }
+      document.documentElement.style.setProperty('--mainColor', "rgb("+r+","+g+","+b+")");
+  }
+
+  const rainbowStop = () =>{
+    clearInterval(rainbowInterval);
+    r=255;
+    g=0;
+    b=0;
+    animationFlag = 0;   
+  }
 
 
   const colorArray = ['red', 'blueviolet', '#0066ff','Lime','yellow','orange','Fuchsia','#00ccff','white']
@@ -64,16 +107,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const collectGridAndCreateRandomSquare = () =>{
 
     const divNode = document.querySelectorAll('.one-piece-square');
-    let divArray = Array.from(divNode);
-    return divArray
+    return  Array.from(divNode)
    }
    
   
-  const randomSquareRespawn = (divsArray, magicDivSample) =>{
+  const randomSquareRespawn = (divsArray, magicDivSampler) =>{
     let rand = Math.floor(Math.random() * divsArray.length);
-    divsArray[rand].insertAdjacentHTML('afterbegin',magicDivSample);
+    divsArray[rand].insertAdjacentHTML('afterbegin',magicDivSampler);
+
+    setTimeout(function(){
+      divsArray[rand].querySelector('.dropped-coin-sample').remove();
+    }, 2000);
     
   }
+
+  triggerInputs();
+  drawGrid();
+
  
   // const logIn = async () =>{
   //   const loginURL = "http://gierka.local/login.php"
@@ -92,11 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   //   console.log(response.json());
   // };
-
-  triggerInputs();
-  drawGrid();
-
-
 
 
   });

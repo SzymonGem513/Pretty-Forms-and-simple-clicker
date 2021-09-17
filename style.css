@@ -21,7 +21,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     display: flex;
-    height: 100vh;;
+    height: 100vh;
+    ;
 }
 
 .container-left {
@@ -72,14 +73,12 @@ body {
     cursor: auto;
 }
 
-.login-container{
+.login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-
 
 .input-container {
     position: relative;
@@ -168,10 +167,8 @@ body {
 }
 
 .clicker-button {
-    width: 540px;
-    height: 200px;
-    margin: 0 auto;
-    margin-top: 30vh;
+    max-width: 540px;
+    max-height: 200px;
     background-color: transparent;
     border: 1px solid var(--mainColor);
     cursor: pointer;
@@ -183,9 +180,14 @@ body {
     grid-row-gap: 0px;
 }
 
+.button-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+}
+
 .clicker-button-shadow {
-    width: 560px;
-    height: 220px;
     box-shadow: 0 2px 4px 0 var(--mainColor), 0 3px 10px 0 var(--mainColor);
 }
 
@@ -199,7 +201,7 @@ body {
     color: var(--mainColor);
     font-size: 24px;
     font-weight: bold;
-    background-color: #222;
+    background-color: var(--darkerBg);
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
@@ -228,7 +230,7 @@ body {
     margin: 20px
 }
 
-.change-color-theme {
+.change-color-theme, .animation-color-theme {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -237,6 +239,14 @@ body {
     height: 15px;
     background-color: var(--mainColor);
     border: none;
+    z-index: 5;
+}
+
+.animation-color-theme {
+    bottom: 0;
+    left: 20px;
+    background-color: transparent;
+    border: 1px solid var(--mainColor);
 }
 
 .stats-menu {
@@ -342,54 +352,71 @@ body {
 
 .drop {
     animation: drop 2s forwards;
-  }
-  @keyframes drop {
+}
+
+@keyframes drop {
     0% {
-      transform-origin: center;
-      opacity: 1;
-    }
-    20% {
-      transform: 
-        translate3d(0, 20px, 0)
-        rotate3d(0, 0, 1, 240deg);
-      opacity: 1;
-    }
-    90%{
+        transform-origin: center;
         opacity: 1;
     }
-    to {
-      opacity: 1;
-      transform: 
-        translate3d(0, -500px, 0)
-        rotate3d(0, 0, 1, 0deg);
+    20% {
+        transform: translate3d(0, 20px, 0) rotate3d(0, 0, 1, 400deg);
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, -500px, 0) rotate3d(0, 0, 1, 0deg);
         opacity: 0;
     }
-  }
+}
 
- 
-  @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .clicker-button {
         max-width: 220px;
         max-height: 100px;
         display: grid;
-            grid-template-columns: repeat(10, 20px);
-            grid-template-rows: repeat(5, 20px);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            grid-auto-rows: max-content;
-            grid-auto-columns: max-content;
+        grid-template-columns: repeat(10, 20px);
+        grid-template-rows: repeat(5, 20px);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid-auto-rows: max-content;
+        grid-auto-columns: max-content;
     }
-    .clicker-button-shadow {
-        max-width: 260px;
-        max-height: 120px !important;
-
-    }
-    .container-left{
+    .container-left {
         display: none;
     }
-    .container-top{
-        width:100vw;
-
+    .container-top {
+        width: 100vw;
     }
-    
-  }
+}
+
+@keyframes rainbow {
+    0% {
+        border-color: var(--mainColor, red);
+    }
+    14.285714285714285714285714285714% {
+        border-color: var(--mainColor, orange);
+    }
+    28.571428571428571428571428571428% {
+        border-color: var(--mainColor, yellow);
+    }
+    42.857142857142857142857142857142% {
+        border-color: var(--mainColor, green);
+    }
+    57.142857142857142857142857142856% {
+        border-color: var(--mainColor, blue);
+    }
+    71.42857142857142857142857142857% {
+        border-color: var(--mainColor, indigo);
+    }
+    100% {
+        border-color: var(--mainColor, purple);
+    }
+}
+
+.rainbow-aniamtion {
+    animation: rainbow 3s;
+}
