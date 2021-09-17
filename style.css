@@ -360,13 +360,13 @@ body {
         opacity: 1;
     }
     20% {
-        transform: translate3d(0, 20px, 0) rotate3d(0, 0, 1, 240deg);
+        transform: translate3d(0, 20px, 0) rotate3d(0, 0, 1, 400deg);
         opacity: 1;
     }
     90% {
         opacity: 1;
     }
-    to {
+    100% {
         opacity: 1;
         transform: translate3d(0, -500px, 0) rotate3d(0, 0, 1, 0deg);
         opacity: 0;
