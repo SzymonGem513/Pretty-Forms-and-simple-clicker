@@ -111,15 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
    }
    
   
-  const randomSquareRespawn = (divsArray, magicDivSample) =>{
+  const randomSquareRespawn = (divsArray, magicDivSampler) =>{
     let rand = Math.floor(Math.random() * divsArray.length);
-    divsArray[rand].insertAdjacentHTML('afterbegin',magicDivSample);
+    divsArray[rand].insertAdjacentHTML('afterbegin',magicDivSampler);
 
     setTimeout(function(){
       divsArray[rand].querySelector('.dropped-coin-sample').remove();
     }, 2000);
     
   }
+
+  triggerInputs();
+  drawGrid();
+
  
   // const logIn = async () =>{
   //   const loginURL = "http://gierka.local/login.php"
@@ -138,9 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   //   console.log(response.json());
   // };
-
-  triggerInputs();
-  drawGrid();
 
 
   });
